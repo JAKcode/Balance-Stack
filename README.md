@@ -1,4 +1,4 @@
-# Balance-Stack
+//# Balance-Stack
 //Currently amazingly non-functional
 #include <iostream>
 #include <stack>
@@ -7,7 +7,7 @@ using namespace std;
 void push (string & x)
 {
 stack <char> stk;
-for(unsigned int i = 0; i < input.length() -1; i++)
+for(unsigned int i = 0; i < x.length() -1; i++)
 {
 if ((stk[i])=='(')
 {
@@ -15,17 +15,7 @@ if ((stk[i])=='(')
 }
 else if (stk[i]==')')
 {
-pop();
-}
-}
-}
-if (stk[i] == NULL)
-{
-	cout <<"balanced expr!!";
-}
-char pop()
-{
-	if (stk.empty();)
+	if (stk.empty())
 	{
 		cout <<"underflow!!";
 	}
@@ -34,9 +24,14 @@ char pop()
 		stk.pop();
 	}
 }
+}
+}
+if (stk[i] == NULL)
+{
+	cout <<"balanced expr!!";
+}
 int main()
 {	
-stack<char> stk;
 string input;
 cin >> input;
 push(input);
