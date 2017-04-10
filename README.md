@@ -4,9 +4,24 @@
 #include <stack>
 #include <string>
 using namespace std;
-void push (char x)
+void push (string & x)
 {
-stk.push(char x);
+stack <char> stk;
+for(unsigned int i = 0; i < input.length() -1; i++)
+{
+if ((stk[i])=='(')
+{
+	stk.push(x);
+}
+else if (stk[i]==')')
+{
+pop();
+}
+}
+}
+if (stk[i] == NULL)
+{
+	cout <<"balanced expr!!";
 }
 char pop()
 {
@@ -21,27 +36,9 @@ char pop()
 }
 int main()
 {	
-    stack<char> stk;
-    string input;
-	cin >> input;
-    for(unsigned int i = 0; i < input.length() -1; i++)
-{
-if ((stk[i])=='(')
-{
-	push(stk[i]);
-}
-else if (stk[i]==')')
-{
-pop();
-}
-}
-if (stk[i] == NULL)
-{
-	cout <<"balanced expr!!";
-}
-else
-{
-	cout <<"String is not valid!!";
-}
+stack<char> stk;
+string input;
+cin >> input;
+push(input);
 system("pause");
 }
