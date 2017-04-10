@@ -24,10 +24,12 @@ else if (stk[i]==')')
 		stk.pop();
 	}
 }
-}
 if (stk[i] == NULL)
 {
 	cout <<"balanced expr!!";
+}
+else 
+    cout <<"Incorrect String";
 }
 }
 int main()
