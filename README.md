@@ -25,10 +25,10 @@ else if (stk[i]==')')
 	}
 }
 }
-}
 if (stk[i] == NULL)
 {
 	cout <<"balanced expr!!";
+}
 }
 int main()
 {	
