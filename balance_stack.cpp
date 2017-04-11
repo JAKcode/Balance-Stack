@@ -1,5 +1,6 @@
 //# Balance-Stack
 //Currently amazingly non-functional
+//now funtional
 #include <iostream>
 #include <stack>
 #include <string>
