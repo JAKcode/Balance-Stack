@@ -1,23 +1,23 @@
 //# Balance-Stack
-
-//now functional
+//Currently amazingly non-functional
 #include <iostream>
 #include <stack>
 #include <string>
 using namespace std;
-void push (string & x)
+bool push (string  x)
 {
 stack <char> stk;
-for(unsigned int i = 0; i < x.length() -1; i++)
+for(unsigned int i = 0; i < x.length() ; i++)
 {
-if ((stk[i])=='(')
+if ((x[i])=='(')
 {
-	stk.push(x);
+	stk.push(x[i]);
 }
-else if (stk[i]==')')
+else if (x[i]==')')
 {
 	if (stk.empty())
 	{
+	    return false;
 		cout <<"underflow!!";
 	}
 	else
@@ -25,18 +25,28 @@ else if (stk[i]==')')
 		stk.pop();
 	}
 }
-if (stk[i] == NULL)
+}
+if (stk.empty())
 {
-	cout <<"balanced expr!!";
+    return true;
+	//cout <<"balanced expr!!";
 }
-else 
-    cout <<"Incorrect String";
+else{
+    cout << stk.top();
+    return false;
+    //cout <<"Incorrect String";
 }
 }
+
 int main()
-{	
+{
 string input;
+cout << "enter string"<<endl;
 cin >> input;
-push(input);
-system("pause");
+if(push(input)){
+    cout << "balanced expression" << endl;
+}else{
+    cout << "invalid expression" << endl;
+}
+//system("pause");
 }
